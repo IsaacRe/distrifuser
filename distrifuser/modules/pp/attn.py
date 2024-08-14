@@ -1,9 +1,11 @@
 import torch
 from diffusers.models.attention import Attention
-from diffusers.utils import USE_PEFT_BACKEND
+# from diffusers.utils import USE_PEFT_BACKEND
 from torch import distributed as dist
 from torch import nn
 from torch.nn import functional as F
+
+USE_PEFT_BACKEND = False
 
 from distrifuser.modules.base_module import BaseModule
 from distrifuser.utils import DistriConfig

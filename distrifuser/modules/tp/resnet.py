@@ -1,8 +1,10 @@
 import torch.cuda
-from diffusers.models.resnet import Downsample2D, ResnetBlock2D, Upsample2D, USE_PEFT_BACKEND
+from diffusers.models.resnet import Downsample2D, ResnetBlock2D, Upsample2D  # , USE_PEFT_BACKEND
 from torch import distributed as dist
 from torch import nn
 from torch.nn import functional as F
+
+USE_PEFT_BACKEND = False
 
 from ..base_module import BaseModule
 from ...utils import DistriConfig

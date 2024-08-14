@@ -1,6 +1,5 @@
 import torch
 from diffusers import UNet2DConditionModel
-from diffusers.models.unet_2d_condition import UNet2DConditionOutput
 from torch import distributed as dist
 
 from .base_model import BaseModel
@@ -206,10 +205,7 @@ class NaivePatchUNet(BaseModel):  # for Patch Parallelism
                     }
                 self.synchronize()
 
-        if return_dict:
-            output = UNet2DConditionOutput(sample=output)
-        else:
-            output = (output,)
+        output = (output,)
 
         self.counter += 1
         return output
